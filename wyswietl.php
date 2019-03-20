@@ -158,7 +158,7 @@
         }
     }
     
-    echo '<table>';
+    echo "<table class='content'>";
     foreach($result as $row){
         if($row['napis']!=""){
             $row['napis']="'".$row['napis']."'";

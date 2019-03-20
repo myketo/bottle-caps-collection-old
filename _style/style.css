@@ -1,218 +1,122 @@
-main .znalezione table img, main .tabelka table img, main .dodaj table img, main .ostatnie table img {
-  line-height: 200px;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-}
-
-main .znalezione table a, main .tabelka table a, main .dodaj table a, main .ostatnie table a {
-  font-size: 10px;
-  font-weight: normal;
-  color: blue;
-  margin-left: 4px;
-}
-
-* {
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+*, html {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial;
+  font-size: 10px;
 }
 
 body {
-  background-color: #e8f0ff;
+  font-family: "Montserrat", sans-serif;
+  background-color: #f7f7f7;
 }
 
-nav {
-  height: 90px;
-  padding: 30px;
-  background-color: #6da5ff;
-  border-bottom: 3px solid black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
+.navigation {
   width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #8b4199;
+  justify-content: space-between;
 }
-nav a {
+.navigation .header {
+  margin-left: 5vw;
+}
+.navigation .header a {
   text-decoration: none;
-  color: black;
 }
-nav .header {
-  font-size: 30px;
+.navigation .header a h1 {
+  font-size: 1.8rem;
+  color: white;
 }
-nav .nav {
-  display: flex;
-  justify-content: space-around;
-  width: 400px;
-  font-size: 15px;
+.navigation .header a h1::first-letter {
+  font-size: 2rem;
 }
-nav .nav img {
-  height: 55px;
-}
-nav .nav div {
-  text-align: center;
-  position: relative;
+.navigation .search select {
   width: 100px;
-  transition: transform 0.2s;
+  height: 30px;
+  border: 1px solid #ae64bc;
+  background-color: #8b4199;
+  color: #ae64bc;
 }
-nav .nav div p {
-  margin-top: -5px;
-  letter-spacing: 1px;
+.navigation .search select:focus {
+  outline: none;
+  border: 2px solid #ae64bc;
 }
-nav .nav div:hover {
-  text-decoration: underline;
-  transform: scale(1.15);
+.navigation .search select:hover {
+  cursor: pointer;
+  outline: none;
 }
-nav .nav .count {
-  position: absolute;
-  top: 39%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
+.navigation .search input[type=text] {
+  width: 150px;
+  height: 30px;
+  border: 1px solid #ae64bc;
+  background-color: #8b4199;
+  color: #ae64bc;
 }
-nav .nav .loginImg {
-  transform: scaleX(-1) scaleY(1);
+.navigation .search input[type=text]:focus {
+  outline: none;
+  border: 2px solid #ae64bc;
 }
-
-main {
-  padding: 10px;
-}
-main .ostatnie h2 {
-  font-size: 30px;
-}
-main .ostatnie table {
-  width: 100%;
-  table-layout: fixed;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-main .ostatnie table td {
-  border: 1px dashed black;
-  padding: 8px;
-}
-main .ostatnie table td p {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-main .ostatnie table img {
-  height: 180px;
-}
-main .dodaj h2 {
-  font-size: 30px;
-}
-main .dodaj label, main .dodaj input {
-  margin-bottom: 5px;
-}
-main .dodaj form {
-  margin: 15px 0;
-}
-main .dodaj table {
-  border-collapse: collapse;
-}
-main .dodaj table td {
-  border: 1px solid black;
+.navigation .search input[type=submit] {
+  height: 30px;
   padding: 5px;
+  border: 1px solid #ae64bc;
+  background-color: #8b4199;
+  color: #ae64bc;
 }
-main .dodaj table img {
-  height: 200px;
-  width: 265px;
+.navigation .search input[type=submit]:focus {
+  outline: none;
+  border: 2px solid #ae64bc;
 }
-main .tabelka .wyswietl__top {
+.navigation .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  margin-right: 5vw;
 }
-main .tabelka center a, main .tabelka center span {
-  margin: 0 10px;
-  font-size: 18px;
-  color: black;
-}
-main .tabelka table {
-  border-collapse: collapse;
-  margin: 10px 0;
-}
-main .tabelka table td {
-  border: 1px solid black;
-  padding: 5px;
-}
-main .tabelka table img {
-  height: 200px;
-  width: 265px;
-}
-main .znalezione table {
-  border-collapse: collapse;
-  margin: 10px 0;
-}
-main .znalezione table td {
-  border: 1px solid black;
-  padding: 5px;
-}
-main .znalezione table img {
-  height: 200px;
-  width: 265px;
-}
-main .kraje {
+.navigation .nav div {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+  padding: 0 5px;
+  transition: 200ms ease all;
+  border-bottom: 1px solid #8b4199;
+}
+.navigation .nav div a {
+  display: flex;
+  align-items: center;
   flex-direction: row;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.8rem;
 }
-main .kraje .alpha {
-  display: flex;
-  flex-direction: column;
+.navigation .nav div:first-child, .navigation .nav div:hover {
+  border-bottom: 1px solid #ae64bc;
 }
-main .kraje .alpha a {
-  color: blue;
+
+.main main .ostatnie h2 {
+  font-size: 1.8rem;
+  margin: 20px 0 0 5vw;
+  color: #8b4199;
 }
-main .kraje .alpha a img {
-  width: 28px;
-  height: 18px;
-}
-main .kraje .alpha span {
-  margin: 3px;
-}
-main .kraje .top {
+.main main table {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-main .kraje .top a {
-  text-decoration: none;
-  color: black;
+.main main table tbody tr td {
+  padding: 50px !important;
 }
-main .kraje .top span {
-  margin: 8px;
+.main main table tbody tr td img {
+  width: 300px;
+  height: 250px;
 }
-main .kraje .top .first {
-  font-size: 60px;
-  text-decoration: underline;
+.main main table tbody tr td p {
+  max-width: 300px;
 }
-main .kraje .top .second {
-  font-size: 40px;
-  text-decoration: underline;
-}
-main .kraje .top .third {
-  font-size: 30px;
-  text-decoration: underline;
-}
-main .login h2 {
-  font-size: 30px;
-}
-main .login form {
-  margin: 15px 0;
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-}
-main .login form input {
-  margin-bottom: 5px;
-}
-main .login form .loginError {
-  color: red;
-  font-size: 10px;
+.main main table tbody tr td p.diff {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=style.css.map */

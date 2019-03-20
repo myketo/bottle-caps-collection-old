@@ -16,12 +16,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="_style/style.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <title>Kolekcja kapsli</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+  AOS.init();
+</script>
     </head>
     <body>
 
        <section class="all">
-            <nav>
+            <nav class='navigation'>
                 <div class='header'><a href="index.php"><h1>KOLEKCJA KAPSLI</h1></a></div>
                 <div class='search'>
                     <form method="POST">
@@ -50,12 +56,12 @@
                         foreach($result as $row){
                             echo $row['COUNT(id)'];
                         }
-                        ?></span><img src='_icons/kapsle.png' alt='kapsle'><p>Kapsle</p></a>
+                        ?></span>&nbsp;<i class="far fa-eye"></i>&nbsp;<p>Kapsle</p></a>
                     </div>
-                    <div><a href="index.php?str=uzupelnic"><img src='_icons/niepelne.png' alt='niepelne'><p>Nieznane</p></a></div>
-                    <div><a href="index.php?str=kraje"><img src='_icons/kraje.png' alt='kraje'><p>Kraje</p></a></div>
-                    <div><a href="index.php?str=login"><img src='_icons/login.png' alt='login' 
-                    <?php if(isset($_SESSION['logged_in'])) echo "class='loginImg'"; ?>>
+                    <div><a href="index.php?str=uzupelnic"><i class="far fa-question-circle"></i>&nbsp;<p>Nieznane</p></a></div>
+                    <div><a href="index.php?str=kraje"><i class="far fa-flag"></i>&nbsp;<p>Kraje</p></a></div>
+                    <div><a href="index.php?str=login"><i class="fas fa-sign-in-alt"></i> &nbsp;
+                    <?php if(isset($_SESSION['logged_in'])) echo "class='loginImg'"; ?>
                     <p><?php echo isset($_SESSION['logged_in']) ? "Wyloguj" : "Zaloguj" ?></p></a></div>
                 </section>
             </nav>

@@ -30,21 +30,21 @@ foreach($result as $row){
     if($i==1 || $i==4 || $i==7){
         echo "<tr>
         <td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
-        <p><i>".$row['marka']; 
+        <p class='diff'><i>".$row['marka']; 
         if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
         echo ">".$row['napis']."</p></td>";
     }else if($i==2 || $i==5 || $i==8){
         echo "<td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
-        <p><i>".$row['marka'];
+        <p class='diff'><i>".$row['marka'];
         if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
         echo ">".$row['napis']."</p></td>";
     }else{
         echo "<td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
-        <p><i>".$row['marka'];
+        <p class='diff'><i>".$row['marka'];
         if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
