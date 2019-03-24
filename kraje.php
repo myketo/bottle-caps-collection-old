@@ -8,9 +8,9 @@ $result = mysqli_query($connect, $query);
 
 echo "<div class='alpha'>";
     foreach($result as $row){
-        $kraj = preg_replace('/\s+/', '_', $row['kraj']);
+        $kraj = strtolower(preg_replace('/\s+/', '_', $row['kraj']));;
 
-        echo "<span class='all'><a href='index.php?str=wyswietl&kraj=$kraj'><img src='_icons/flags/".$kraj.".png'></img>".
+        echo "<span class='all'><a href='index.php?str=wyswietl&kraj=$kraj'><img src='_icons/flags/$kraj.png'></img>".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }
 echo "</div>";
