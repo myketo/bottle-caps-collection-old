@@ -24,7 +24,7 @@ echo "<div class='tabelka'>
         echo "<tr>
         <td rowspan='4' width='20%'><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'></td>
         <td><h3>".$row['marka']; 
-        if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
+        if(isset($_SESSION['logged_in'])) echo "<a href='/aktualizuj/".$row['id']."'>(Aktualizuj)</a>";
         echo "</h3></td>
         </tr><tr>
         <td><h5>".$row['napis']."</h5></td>

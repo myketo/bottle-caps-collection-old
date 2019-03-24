@@ -31,21 +31,21 @@ foreach($result as $row){
         echo "<tr>
         <td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
         <p><i>".$row['marka']; 
-        if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
+        if(isset($_SESSION['logged_in'])) echo "<a href='/aktualizuj/".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
         echo ">".$row['napis']."</p></td>";
     }else if($i==2 || $i==5 || $i==8){
         echo "<td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
         <p><i>".$row['marka'];
-        if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
+        if(isset($_SESSION['logged_in'])) echo "<a href='/aktualizuj/".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
         echo ">".$row['napis']."</p></td>";
     }else{
         echo "<td><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'><br>
         <p><i>".$row['marka'];
-        if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
+        if(isset($_SESSION['logged_in'])) echo "<a href='/aktualizuj/".$row['id']."'>(Aktualizuj)</a>";
         echo "</i></p><p title=";
         if(isset($title))echo $title;
         echo ">".$row['napis']."</p></td>";

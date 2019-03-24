@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST['submit'])){
         $sort = $_POST['select'];
-        header("Location: index.php?str=wyswietl&page=1&sort=$sort");
+        header("Location: /wyswietl/$sort/1");
     }
 
     include "header.php";
@@ -77,82 +77,82 @@
         }elseif($page==1){
             echo "<center>
                 <span>Strona $page</span>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+1)."</a>
-                <a href='index.php?str=wyswietl&page=".($page+2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+2)."</a>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>--></a>
-                <a href='index.php?str=wyswietl&page=$last";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Ostatnia</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>".($page+1)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+2)."'>".($page+2)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>--></a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo $last."'>Ostatnia</a>
             </center>";
             break;
         }else if($page==$last){
             echo "<center>
-                <a href='index.php?str=wyswietl&page=1";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Pierwsza</a>
-                <a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'><--</a>";
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "1'>Pierwsza</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'><--</a>";
         if($page>2){
-            echo "<a href='index.php?str=wyswietl&page=".($page-2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-2)."</a>";
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-2)."'>".($page-2)."</a>";
         }
-            echo "<a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-1)."</a>
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'>".($page-1)."</a>
                 <span>Strona $page</span>
             </center>";
             break;
         }else if($page<$last){
             echo "<center>
-                <a href='index.php?str=wyswietl&page=1";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Pierwsza</a>
-                <a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'><--</a>
-                "; if(($page-2)>=1){echo "<a href='index.php?str=wyswietl&page=".($page-2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-2)."</a>";};
-            echo "<a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-1)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "1'>Pierwsza</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'><--</a>
+                "; if(($page-2)>=1){echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-2)."'>".($page-2)."</a>";};
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'>".($page-1)."</a>
                 <span>Strona $page</span>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+1)."</a>
-                "; if(($page+2)<=$last){echo "<a href='index.php?str=wyswietl&page=".($page+2);
-                if(isset($sort)){echo '&sort='.$sort;};    
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+2)."</a>";};
-            echo "<a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>--></a>
-                <a href='index.php?str=wyswietl&page=$last";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Ostatnia</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>".($page+1)."</a>
+                "; if(($page+2)<=$last){echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';    
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+2)."'>".($page+2)."</a>";};
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>--></a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "$last'>Ostatnia</a>
             </center>";
             break;
         }
@@ -175,7 +175,7 @@
         echo "<tr>
         <td rowspan='4' width='20%'><img src='images/".$row['zdjecie']."' alt='BRAK ZDJĘCIA'></td>
         <td><h3>".$i++.". ".$row['marka'];
-        if(isset($_SESSION['logged_in'])) echo "<a href='index.php?str=aktualizuj&id=".$row['id']."'>(Aktualizuj)</a>";
+        if(isset($_SESSION['logged_in'])) echo "<a href='/aktualizuj/".$row['id']."'>(Aktualizuj)</a>";
         
         echo "</h3></td>
         </tr><tr>
@@ -195,82 +195,82 @@
         }elseif($page==1){
             echo "<center>
                 <span>Strona $page</span>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+1)."</a>
-                <a href='index.php?str=wyswietl&page=".($page+2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+2)."</a>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>--></a>
-                <a href='index.php?str=wyswietl&page=$last";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Ostatnia</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>".($page+1)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+2)."'>".($page+2)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>--></a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "$last'>Ostatnia</a>
             </center>";
             break;
         }else if($page==$last){
             echo "<center>
-                <a href='index.php?str=wyswietl&page=1";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Pierwsza</a>
-                <a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'><--</a>";
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "1'>Pierwsza</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'><--</a>";
         if($page>2){
-            echo "<a href='index.php?str=wyswietl&page=".($page-2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-2)."</a>";
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-2)."'>".($page-2)."</a>";
         }
-            echo "<a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-1)."</a>
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'>".($page-1)."</a>
                 <span>Strona $page</span>
             </center>";
             break;
         }else if($page<$last){
             echo "<center>
-                <a href='index.php?str=wyswietl&page=1";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Pierwsza</a>
-                <a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'><--</a>
-                "; if(($page-2)>=1){echo "<a href='index.php?str=wyswietl&page=".($page-2);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-2)."</a>";};
-            echo "<a href='index.php?str=wyswietl&page=".($page-1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page-1)."</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "1'>Pierwsza</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'><--</a>
+                "; if(($page-2)>=1){echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-2)."'>".($page-2)."</a>";};
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page-1)."'>".($page-1)."</a>
                 <span>Strona $page</span>
-                <a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+1)."</a>
-                "; if(($page+2)<=$last){echo "<a href='index.php?str=wyswietl&page=".($page+2);
-                if(isset($sort)){echo '&sort='.$sort;};    
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>".($page+2)."</a>";};
-            echo "<a href='index.php?str=wyswietl&page=".($page+1);
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>--></a>
-                <a href='index.php?str=wyswietl&page=$last";
-                if(isset($sort)){echo '&sort='.$sort;};
-                if(isset($kraj)){echo '&kraj='.$kraj;};
-            echo "'>Ostatnia</a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>".($page+1)."</a>
+                "; if(($page+2)<=$last){echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';    
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+2)."'>".($page+2)."</a>";};
+            echo "<a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo ($page+1)."'>--></a>
+                <a href='/wyswietl/";
+                if(isset($sort)) echo $sort.'/';
+                if(isset($kraj)) echo 'kraj/'.$kraj.'/';
+            echo "$last'>Ostatnia</a>
             </center>";
             break;
         }

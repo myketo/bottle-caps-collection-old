@@ -1,6 +1,6 @@
 <?php
     if(!isset($_SESSION['logged_in'])){
-        header("Location: index.php");
+        header("Location: /home");
     }else{
         $loggedUser = $_SESSION['logged_in'];
     }
@@ -153,7 +153,7 @@
         session_unset();
         $_SESSION['logged_in'] = $loggedUser;
         
-        header("Location: index.php?str=dodaj");
+        header("Location: /dodaj");
     }
     
 echo "</div>";

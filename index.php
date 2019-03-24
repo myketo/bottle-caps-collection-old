@@ -28,8 +28,8 @@ if(isset($_GET['str'])){
             include "szukaj.php";
             break;
         
-        case "uzupelnic":
-            include "uzupelnic.php";
+        case "nieznane":
+            include "nieznane.php";
             break;
 
         case "wyswietl":

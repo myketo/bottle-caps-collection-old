@@ -10,7 +10,7 @@ echo "<div class='alpha'>";
     foreach($result as $row){
         $kraj = strtolower(preg_replace('/\s+/', '_', $row['kraj']));;
 
-        echo "<span class='all'><a href='index.php?str=wyswietl&kraj=$kraj'><img src='_icons/flags/$kraj.png'></img>".
+        echo "<span class='all'><a href='/wyswietl/kraj/$kraj'><img src='_icons/flags/$kraj.png'></img>".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }
 echo "</div>";
@@ -25,16 +25,16 @@ foreach($result1 as $row){
     $kraj = preg_replace('/\s+/', '_', $row['kraj']);
 
     if($i==1){
-        echo "<span class='first'><a href='index.php?str=wyswietl&kraj=$kraj'>$i. ".
+        echo "<span class='first'><a href='/wyswietl/kraj/$kraj'>$i. ".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }elseif($i==2){
-        echo "<span class='second'><a href='index.php?str=wyswietl&kraj=$kraj'>$i. ".
+        echo "<span class='second'><a href='/wyswietl/kraj/$kraj'>$i. ".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }elseif($i==3){
-        echo "<span class='third'><a href='index.php?str=wyswietl&kraj=$kraj'>$i. ".
+        echo "<span class='third'><a href='/wyswietl/kraj/$kraj'>$i. ".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }else{
-        echo "<span class='all'><a href='index.php?str=wyswietl&kraj=$kraj'>$i. ".
+        echo "<span class='all'><a href='/wyswietl/kraj/$kraj'>$i. ".
         $row['kraj']." (".$row['COUNT(kraj)'].")</a></span><br>";
     }
 }

@@ -3,7 +3,7 @@
         session_unset();
         session_destroy();
 
-        header("Location: index.php");
+        header("Location: /home");
         die();
     }
 
@@ -51,7 +51,7 @@
         
         if($noErrors){
             $_SESSION['logged_in'] = $user_id;
-            header("Location: index.php");
+            header("Location: /home");
             die();
         }
     }
