@@ -46,6 +46,28 @@ nav{
         font-size: 30px;
     }
 
+    .search{
+        .holder{
+            position: relative;
+        }
+
+        #output{
+            position: absolute;
+            display: none;
+            background: white;
+            border: 1px solid black;
+            width: 169px;
+            font-size: 10px;
+
+            .wynik{
+                height: 40px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
     .nav{
         display: flex;
         justify-content: space-around;
