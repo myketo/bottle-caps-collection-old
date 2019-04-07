@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bottle Caps Collection - Mikołaj Pięcek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="_styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='searchbar.js'></script>
+    <script>
+        function myFunction(x){
+            x.classList.toggle("change");
+            document.getElementById("fullscreen").classList.toggle("change");
+            
+            if($("body").css("overflow") == "auto"){
+                $("body,html").css("overflow", "hidden");
+            }else{
+                $("body,html").css("overflow", "auto");
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href='#' class='logo'>
+            <h1>Bottle Caps Collection</h1>
+            <h2>Mikołaj Pięcek</h2>
+        </a>
+
+        <div class="hamburger" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="toggle_full" id='fullscreen'>
+            <div class='fullscreen'>
+                <span class='user'>
+                    Zalogowano jako: <br>
+                    <u>myketo</u>
+                </span>
+                <a href='#' class='first'>Wyloguj</a>
+                <form class='search'>
+                        <input type='text' placeholder='Szukaj...'>
+                        <input type='image' value='submit' src='_images/search.png'>
+                    </form>
+                <a href='#'>Dodaj</a>
+                <a href='#'>Kapsle</a>
+                <a href='#'>Nieznane</a>
+                <a href='#'>Kraje</a>
+            </div>
+        </div>
+        
+        <section class='nav_le'>
+            <a href='#' class='wszystkie'>
+                <h3>Kapsle</h3>
+            </a>
+
+            <a href='#' class='nieznane'>
+                <h3>Nieznane</h3>
+            </a>
+
+            <a href='#' class='kraje'>
+                <h3>Kraje</h3>
+            </a>
+        </section>
+
+        <section class='nav_ri'>
+            <a href='#' class='dodaj'>
+                <h3>Dodaj</h3>
+            </a>
+
+            <span class='user'>
+                Zalogowano jako: <br>
+                <u>myketo</u>
+            </span>
+
+            <a href='#' class='login'>
+                <h3>Wyloguj</h3>
+            </a>
+        </section>
+    </nav>
+
+
+    <main>
+        <form class="search_bar large">
+            <div class="search_dropdown" style="width: 16px;">
+                <span>Sortuj</span>
+                <ul>
+                <li class="selected">Wszystko</li>
+                <li>Marka</li>
+                <li>Napis</li>
+                <li>Kolor</li>
+                <li>Kraj</li>
+                </ul>
+            </div>
+            
+            <input type="text" placeholder="Wyszukaj spośród 483 kapsli!" />
+            
+            <button type="submit" value="Search">Szukaj</button>
+        </form>
+
+        <section class='home'>
+            <h1>Ostatnio dodane:</h1>
+
+            <table>
+                <tr>
+                    <td>
+                        <img src='_images/example.jpg'><br>
+                        <i>Lorem ipsum.</i>
+                        <a href='#' class='update'>Aktualizuj</a>
+                        <br><span title='Lorem ipsum dolor sLorem ipsum dolor siLorem ipsum dolor siit amet.' class='opis'>'Lorem ipsum dolor sLorem ipsum dolor siLorem ipsum dolor siit amet.'</span>
+                    </td>
+                    <td>
+                        <img src='_images/example.jpg'><br>
+                        <i>Lorem ipsum.</i><br>
+                        'Lorem ipsum dolor sit amet.'
+                    </td>
+                    <td>
+                        <img src='_images/example.jpg'><br>
+                        <i>Lorem ipsum.</i><br>
+                        'Lorem ipsum dolor sit amet.'
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <img src='_images/example.jpg'><br>
+                            <i>Lorem ipsum.</i>
+                            <a href='#' class='update'>Aktualizuj</a>
+                            <br><span title='Lorem ipsum dolor sLorem ipsum dolor siLorem ipsum dolor siit amet.' class='opis'>'Lorem ipsum dolor sLorem ipsum dolor siLorem ipsum dolor siit amet.'</span>
+                        </td>
+                        <td>
+                            <img src='_images/example.jpg'><br>
+                            <i>Lorem ipsum.</i><br>
+                            'Lorem ipsum dolor sit amet.'
+                        </td>
+                        <td>
+                            <img src='_images/example.jpg'><br>
+                            <i>Lorem ipsum.</i><br>
+                            'Lorem ipsum dolor sit amet.'
+                        </td>
+                    </tr>
+            </table>
+            <p style='text-align: right;'><a href='#' class='show_more'>Zobacz więcej...</a></p>
+        </section>
+    </main>
+</body>
+</html>

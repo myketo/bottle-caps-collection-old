@@ -1,0 +1,433 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.home table td .update, nav .nav_ri .login,
+nav .nav_ri .kraje,
+nav .nav_ri .nieznane,
+nav .nav_ri .wszystkie,
+nav .nav_ri .dodaj, nav .nav_le .login,
+nav .nav_le .kraje,
+nav .nav_le .nieznane,
+nav .nav_le .wszystkie,
+nav .nav_le .dodaj, nav .logo {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: auto;
+  position: relative;
+}
+body main {
+  padding: 20px 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  padding: 10px 35px;
+}
+nav .hamburger {
+  display: none;
+}
+nav .toggle_full {
+  display: none;
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 15px;
+  color: #e03131;
+  width: 20vw;
+}
+nav .logo h1 {
+  border-bottom: 1px solid #29292c;
+  margin: 0;
+  font-size: 1.2vw;
+  padding-bottom: 4px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+nav .logo h2 {
+  font-size: 1vw;
+  margin: 0;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+nav .nav_le {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  margin-right: 6vw;
+}
+nav .nav_le .login,
+nav .nav_le .kraje,
+nav .nav_le .nieznane,
+nav .nav_le .wszystkie,
+nav .nav_le .dodaj {
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  margin: 0 20px;
+}
+nav .nav_le .login h3,
+nav .nav_le .kraje h3,
+nav .nav_le .nieznane h3,
+nav .nav_le .wszystkie h3,
+nav .nav_le .dodaj h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 300;
+}
+nav .nav_le .login:hover,
+nav .nav_le .kraje:hover,
+nav .nav_le .nieznane:hover,
+nav .nav_le .wszystkie:hover,
+nav .nav_le .dodaj:hover {
+  transition: opacity 0.7s ease, border-color 0.7s ease, color 0.2s ease;
+  border-color: #c41f1f;
+  color: #e03131;
+}
+nav .nav_ri {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30vw;
+  margin-left: 2vw;
+}
+nav .nav_ri .login,
+nav .nav_ri .kraje,
+nav .nav_ri .nieznane,
+nav .nav_ri .wszystkie,
+nav .nav_ri .dodaj {
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+  margin: 0 20px;
+}
+nav .nav_ri .login h3,
+nav .nav_ri .kraje h3,
+nav .nav_ri .nieznane h3,
+nav .nav_ri .wszystkie h3,
+nav .nav_ri .dodaj h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 300;
+}
+nav .nav_ri .login:hover,
+nav .nav_ri .kraje:hover,
+nav .nav_ri .nieznane:hover,
+nav .nav_ri .wszystkie:hover,
+nav .nav_ri .dodaj:hover {
+  transition: opacity 0.7s ease, border-color 0.7s ease, color 0.2s ease;
+  border-color: #c41f1f;
+  color: #e03131;
+}
+nav .nav_ri .user {
+  color: #e03131;
+  font-size: 10px;
+  text-align: center;
+}
+
+main {
+  @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+}
+main form {
+  margin: 10px auto 60px;
+}
+main .search_bar {
+  background: #fff;
+  border: #b7b7b7 solid 1px;
+  border-radius: 3px;
+  box-shadow: 0 0 3px #ccc;
+  position: relative;
+  font-family: "Source Sans Pro", sans-serif;
+  max-width: 420px;
+}
+main .search_bar input[type=text] {
+  border: none;
+  box-shadow: none;
+  font-weight: 600;
+  font-size: 14px;
+  width: 80%;
+  padding: 0.5em;
+  margin: 0;
+  overflow: hidden;
+}
+main .search_bar input[type=text]:focus {
+  outline: none;
+}
+main .search_bar input[type=text]::placeholder {
+  content: "•";
+}
+main .search_bar button[type=submit] {
+  background: linear-gradient(#df3737, #d12121);
+  color: rgba(255, 255, 255, 0);
+  border: 1px solid #c41f1f;
+  width: 10%;
+  min-width: 56px;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 0 3px 3px 0;
+  margin: 0;
+  user-select: none;
+}
+main .search_bar button[type=submit]:after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 0;
+  bottom: 22%;
+  left: 4%;
+  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+  background-size: contain;
+}
+main .search_bar button[type=submit]:hover, main .search_bar button[type=submit]:focus {
+  background: linear-gradient(#e34d4d, #dd2929);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+main .search_bar .search_dropdown {
+  font-weight: 600;
+  min-width: 17px;
+  background: linear-gradient(#f4f4f4, #e2e2e2);
+  border-right: 1px solid #ddd;
+  color: #555;
+  padding: 0 28px 0 13px;
+  border-radius: 2px 0 0 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  user-select: none;
+  box-sizing: content-box;
+}
+main .search_bar .search_dropdown:after {
+  content: "↓";
+  color: rgba(85, 85, 85, 0);
+  background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+  height: 8px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  margin-top: -6px;
+}
+main .search_bar .search_dropdown:hover, main .search_bar .search_dropdown.active {
+  background: linear-gradient(#e7e7e7, #d5d5d5);
+  cursor: pointer;
+  border-right-color: #ccc;
+}
+main .search_bar .search_dropdown > span {
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  white-space: nowrap;
+  font-size: 15px;
+}
+main .search_bar .search_dropdown ul {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: -1px;
+  font-size: 14px;
+  width: 225px;
+  background: #fff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 7px 0;
+  margin: 0;
+}
+main .search_bar .search_dropdown li {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 18px;
+  color: #c41f1f;
+  line-height: 1.2em;
+  position: relative;
+}
+main .search_bar .search_dropdown li:hover {
+  background: #e7e7e7;
+}
+main .search_bar .search_dropdown li.selected {
+  background: #c41f1f;
+  color: #fff;
+}
+main .search_bar.large {
+  max-width: 560px;
+}
+main .search_bar.large input[type=text] {
+  font-size: 16px;
+}
+main .search_bar ::placeholder {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 767px) {
+  main .search_bar .search_dropdown {
+    z-index: 1;
+  }
+  main .search_bar ::placeholder {
+    font-size: 2.5vw;
+  }
+
+  nav {
+    padding: 0;
+  }
+  nav .nav_le {
+    display: none;
+  }
+  nav .nav_ri {
+    display: none;
+  }
+  nav .search {
+    display: none;
+  }
+  nav .logo {
+    width: 75vw;
+    margin-left: 0px;
+    z-index: 3;
+  }
+  nav .logo h1 {
+    font-size: 16px;
+  }
+  nav .logo h2 {
+    font-size: 12px;
+  }
+  nav .hamburger {
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 3;
+  }
+  nav .hamburger .bar1, nav .hamburger .bar2, nav .hamburger .bar3 {
+    width: 35px;
+    height: 2px;
+    background-color: #333;
+    margin: 8px 0;
+    transition: 0.4s;
+  }
+  nav .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  nav .change .bar2 {
+    opacity: 0;
+  }
+  nav .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+  nav .toggle_full {
+    display: block;
+  }
+  nav .toggle_full .fullscreen {
+    z-index: 2;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  nav .toggle_full .fullscreen .user {
+    color: #e03131;
+    font-size: 10px;
+    text-align: center;
+  }
+  nav .toggle_full .fullscreen .first {
+    margin-bottom: 26px;
+  }
+  nav .toggle_full .fullscreen a {
+    padding: 17px;
+    margin: 13px;
+    width: 40vw;
+    display: flex;
+    height: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+    background-color: #e03131;
+  }
+  nav .change .fullscreen {
+    display: flex;
+  }
+}
+.home {
+  padding: 0 8vw;
+  margin: 0;
+}
+.home h1 {
+  margin: 0;
+}
+.home .show_more {
+  color: blue;
+}
+.home table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  table-layout: fixed;
+}
+.home table td {
+  padding: 30px;
+  line-height: 25px;
+  font-size: 12px;
+}
+.home table td img {
+  width: 18vw;
+}
+.home table td .opis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  width: 18vw;
+}
+.home table td .update {
+  border: 1px solid #c41f1f;
+  background-color: #c41f1f;
+  color: white;
+  font-size: 11px;
+  border-radius: 7px;
+  padding: 1px 4px;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  main .home {
+    padding: 0;
+  }
+  main .home table tr {
+    display: flex;
+    flex-direction: column;
+  }
+  main .home table tr td img {
+    width: 60vw;
+  }
+  main .home table tr td .opis {
+    width: 60vw;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
