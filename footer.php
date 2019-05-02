@@ -1,5 +1,3 @@
-</main>
-            </section>
-        </section>
-    </body>
+    </main>
+</body>
 </html>

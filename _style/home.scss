@@ -1,0 +1,168 @@
+.home_page{
+    padding: 0 8vw;
+    margin: 0;
+
+    h1{
+        margin: 0;
+    }
+
+    .show_more{
+        color: blue;
+    }
+    
+    table{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        table-layout: fixed;
+        
+        td{
+            padding: 30px;
+            line-height: 25px;
+            //border: 1px solid black;
+            font-size: 12px;
+    
+            img{
+                width: 18vw;
+                cursor: pointer;
+                line-height: 153px;
+                text-align: center;
+            }
+
+            .modal{
+                display: none;
+                position: fixed;
+                z-index: 100;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.9);
+
+                .modal-content{
+                    margin: auto;
+                    display: block;
+                }
+
+                #hideModal {
+                    position: absolute;
+                    top: 15px;
+                    right: 35px;
+                    color: #f1f1f1;
+                    font-size: 80px;
+                    font-weight: bold;
+                    transition: 0.3s;
+
+                    &:hover,
+                    &:focus{
+                        color: #bbb;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                }
+
+                #img{
+                    width: 75%;
+                    height: 75%;
+                }
+                
+                #caption {
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                    max-width: 700px;
+                    text-align: center;
+                    color: #ccc;
+                    padding: 10px 0;
+                    height: 150px;
+                    font-size: 23px;
+                }
+
+                .modal-content, #caption {
+                    animation-name: zoom;
+                    animation-duration: 0.6s;
+                }
+                  
+                @keyframes zoom {
+                    from {transform:scale(0)}
+                    to {transform:scale(1)}
+                }
+            }
+    
+            .caption{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                display: block;
+                width: 18vw;
+
+                &::before,
+                &::after{
+                    content: "'";
+                }
+            }
+    
+            .update{
+                @extend %reset_link;
+                border: 1px solid $darker-red;
+                background-color: $darker-red;
+                color: white;
+                font-size: 11px;
+                border-radius: 7px;
+                padding: 1px 4px;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $max-width){
+    main{
+        .home_page{
+            padding: 0;
+            margin-bottom: 10px;
+
+            table{
+                tr{
+                    display: flex;
+                    flex-direction: column;
+
+                    td{
+                        img{
+                            width: 60vw;
+                        }
+
+                        .modal{
+                            .modal-content {
+                                width: 100%;
+                                margin-top: 20%;
+                              }
+                          
+                              #img{
+                                  height: 40%;
+                              }
+                        }
+        
+                        .cap_info{
+                            span{
+                                font-size: 1.4vh;
+                            }
+        
+                            .brand{
+                                font-size: 15px;
+                            }
+                        }
+
+                        .caption{
+                            width: 60vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

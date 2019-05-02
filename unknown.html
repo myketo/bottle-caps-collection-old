@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bottle Caps Collection - Mikołaj Pięcek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="_styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function myFunction(x){
+            x.classList.toggle("change");
+            document.getElementById("fullscreen").classList.toggle("change");
+            
+            if($("body").css("overflow") == "auto"){
+                $("body,html").css("overflow", "hidden");
+            }else{
+                $("body,html").css("overflow", "auto");
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href='/home.html' class='logo'>
+            <h1>Bottle Caps Collection</h1>
+            <h2>Mikołaj Pięcek</h2>
+        </a>
+
+        <div class="hamburger" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="toggle_full" id='fullscreen'>
+            <div class='fullscreen'>
+                <span class='user'>
+                    Zalogowano jako: <br>
+                    <u>myketo</u>
+                </span>
+                <a href='/login.html' class='first'>Zaloguj</a>
+                <form class='search'>
+                        <input type='text' placeholder='Szukaj...'>
+                        <input type='image' value='submit' src='_assets/search.png'>
+                    </form>
+                <a href='/add.html'>Dodaj</a>
+                <a href='collection.html'>Kolekcja</a>
+                <a href='/unknown.html'>Nieznane</a>
+                <a href='/countries.html'>Kraje</a>
+            </div>
+        </div>
+        
+        <section class='nav_le'>
+            <a href='collection.html' class='wszystkie'>
+                <h3>Kolekcja</h3>
+            </a>
+
+            <a href='/unknown.html' class='nieznane active_page'>
+                <h3>Nieznane</h3>
+            </a>
+
+            <a href='/countries.html' class='kraje'>
+                <h3>Kraje</h3>
+            </a>
+        </section>
+
+        <section class='nav_ri'>
+            <a href='/add.html' class='dodaj'>
+                <h3>Dodaj</h3>
+            </a>
+
+            <span class='user'>
+                Zalogowano jako: <br>
+                <u>myketo</u>
+            </span>
+
+            <a href='/login.html' class='login'>
+                <h3>Zaloguj</h3>
+            </a>
+        </section>
+    </nav>
+    <main>
+        <section class='unknown_page'>
+            <h1>Nieznane kapsle<br>10</h1>
+
+            <div class='caps_list'>
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                <div class='bottle_cap'>
+                    <img src='/_assets/example.jpg'>
+                    <div class='cap_info'>
+                        <span class='brand'><b>1. </b>Warka <a href='/update.html' class='update'>Aktualizuj</a></span>
+                        <span class='caption'>DESPERADOS PIWO O SMAKU TEQUILI BEER FLAVOURED WITH TEQUILA BIERE AROMATISEE TEQUILA</span>
+                        <span>czar-biał-złot</span>
+                        <span>Polska</span>
+                    </div>
+                </div>
+
+                <p class='line'></p>
+
+                
+        </section>
+    </main>
+</body>
+</html>

@@ -1,95 +1,110 @@
-<?php
-    if(isset($_POST['search'])){
-        $szukaj = $_POST['szukaj'];
-        /*$select = $_POST['select'];
-        if($select=='wszystko'){
-            header("Location: /szukaj/$szukaj");
-        }else{
-            header("Location: /szukaj/$select/$szukaj");
-        }*/
-        header("Location: /szukaj/$szukaj");
-    }
-?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <!--<base href='http://localhost/aaaMOJE/KAPSLE_Kopia/'/>-->
-        <!-- <base href='http://mikolajpiecek.000webhostapp.com'> -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kolekcja kapsli</title>
-        <link rel="stylesheet" href="_style/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <script>
-            function searchq(){
-                var searchTxt = $("input[name='szukaj']").val();
-
-                $.post("searchBar.php", {searchVal: searchTxt}, function(output){
-                    $("#output").html(output);
-                });
-
-                $("#output").css('display', 'block');
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bottle Caps Collection - Mikołaj Pięcek</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" type="text/css" href="_styles/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='_scripts/searchbar.js'></script>
+    <script>
+        function myFunction(x){
+            x.classList.toggle("change");
+            document.getElementById("fullscreen").classList.toggle("change");
+            
+            if($("body").css("overflow") == "auto"){
+                $("body,html").css("overflow", "hidden");
+            }else{
+                $("body,html").css("overflow", "auto");
             }
-        </script>
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href='?pg=home' class='logo'>
+            <h1>Bottle Caps Collection</h1>
+            <h2>Mikołaj Pięcek</h2>
+        </a>
 
-        <script>
-            $(document).mouseup(function(e) 
-            {
-                var container = $("#output");
+        <div class="hamburger" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
 
-                // if the target of the click isn't the container nor a descendant of the container
-                if (!container.is(e.target) && container.has(e.target).length === 0) 
-                {
-                    container.hide();
-                }
-            });
-        </script>
-    </head>
-    <body>
-
-       <section class="all">
-            <nav>
-                <div class='header'><a href="/home"><h1>KOLEKCJA KAPSLI</h1></a></div>
-                <div class='search'>
-                    <form method="POST">
-                        <!--<select name="select">
-                            <option value="wszystko" <?php if(isset($_GET['select']) && $_GET['select']=='wszystko'){echo "selected='selected'";}; ?>
-                            >Wszystko</option>
-                            <option value="marka" <?php if(isset($_GET['select']) && $_GET['select']=='marka'){echo "selected='selected'";}; ?>
-                            >Marka</option>
-                            <option value="napis" <?php if(isset($_GET['select']) && $_GET['select']=='napis'){echo "selected='selected'";}; ?>
-                            >Napis</option>
-                            <option value="kolor" <?php if(isset($_GET['select']) && $_GET['select']=='kolor'){echo "selected='selected'";}; ?>
-                            >Kolor</option>
-                            <option value="kraj" <?php if(isset($_GET['select']) && $_GET['select']=='kraj'){echo "selected='selected'";}; ?>
-                            >Kraj</option>
-                        </select>-->
-                        <div class='holder'>
-                            <input type="text" name="szukaj" placeholder='Szukaj...' onkeyup='searchq();' autocomplete='off'>
-                            <div id='output'></div>
-                            <input type="submit" name="search" value="SZUKAJ">
-                        </div>
+        <div class="toggle_full" id='fullscreen'>
+            <div class='fullscreen'>
+                <?php
+                    if(isset($_SESSION['logged_in'])) echo 
+                    "<span class='user'>
+                        Zalogowano jako: <br>
+                        <u>myketo</u>
+                    </span>";
+                ?>
+                <a href='?pg=login' class='first'>
+                <?php echo isset($_SESSION['logged_in']) ? "Wyloguj" : "Zaloguj"; ?>
+                </a>
+                <form class='search'>
+                        <input type='text' placeholder='Szukaj...'>
+                        <input type='image' value='submit' src='_assets/search.png'>
                     </form>
-                </div>
-                <section class='nav'>
-                    <?php if(isset($_SESSION['logged_in'])) echo "<div><a href='/dodaj'><img src='_icons/dodaj.png' alt='dodaj'><p>Dodaj</p></a></div>"; ?>
-                    <div><a href="/wyswietl">
-                        <span class='count'><?php
-                        $query = "SELECT COUNT(id) FROM kolekcja;";
-                        $result = mysqli_query($connect, $query);
-                        foreach($result as $row){
-                            echo $row['COUNT(id)'];
-                        }
-                        ?></span><img src='_icons/kapsle.png' alt='kapsle'><p>Kapsle</p></a>
-                    </div>
-                    <div><a href="/nieznane"><img src='_icons/nieznane.png' alt='nieznane'><p>Nieznane</p></a></div>
-                    <div><a href="/kraje"><img src='_icons/kraje.png' alt='kraje'><p>Kraje</p></a></div>
-                    <div><a href="/login"><img src='_icons/login.png' alt='login' 
-                    <?php if(isset($_SESSION['logged_in'])) echo "class='loginImg'"; ?>>
-                    <p><?php echo isset($_SESSION['logged_in']) ? "Wyloguj" : "Zaloguj" ?></p></a></div>
-                </section>
-            </nav>
-            <section class="main">
-                <main>
+                <?php
+                    if(isset($_SESSION['logged_in'])) echo
+                    "<a href='?pg=add'>Dodaj</a>";
+                ?>
+                <a href='?pg=collection'>Kolekcja</a>
+                <a href='?pg=unknown'>Nieznane</a>
+                <a href='?pg=countries'>Kraje</a>
+            </div>
+        </div>
+        
+        <section class='nav_le'>
+            <a href='?pg=collection' class='wszystkie 
+            <?php if(isset($activePage) && $activePage == 'collection') echo "active_page"; ?>
+            '>
+                <h3>Kolekcja</h3>
+            </a>
+
+            <a href='?pg=unknown' class='nieznane 
+            <?php if(isset($activePage) && $activePage == 'unknown') echo "active_page"; ?>
+            '>
+                <h3>Nieznane</h3>
+            </a>
+
+            <a href='?pg=countries' class='kraje 
+            <?php if(isset($activePage) && $activePage == 'countries') echo "active_page"; ?>
+            '>
+                <h3>Kraje</h3>
+            </a>
+        </section>
+
+        <section class='nav_ri'>
+            <?php
+                if(isset($_SESSION['logged_in'])){
+                    echo 
+                    "<a href='?pg=add' class='dodaj ";
+                    if(isset($activePage) && $activePage == 'add') echo "active_page";
+                    echo "'>
+                        <h3>Dodaj</h3>
+                    </a>
+                    <span class='user'>
+                        Zalogowano jako: <br>
+                        <u>myketo</u>
+                    </span>";
+                }
+            ?>
+
+            <a href='?pg=login' class="login 
+            <?php if(isset($activePage) && $activePage == 'login') echo "active_page"; ?>
+            ">
+                <h3>
+                <?php echo isset($_SESSION['logged_in']) ? "Wyloguj" : "Zaloguj"; ?>
+                </h3>
+            </a>
+        </section>
+    </nav>
+
+    <main>

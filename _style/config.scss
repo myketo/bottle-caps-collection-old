@@ -1,0 +1,25 @@
+%reset_link{
+    text-decoration: none;
+    color: black;
+}
+
+$main-red: rgb(224, 49, 49);
+$darker-red: rgb(196, 31, 31);
+$border-black: rgb(41, 41, 44);
+
+$max-width: 767px;
+
+*{
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    overflow: auto;
+    position: relative;
+
+    main{
+        padding: 20px 30px;
+    }
+}

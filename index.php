@@ -1,45 +1,48 @@
 <?php
-session_start();
-include "connect.php";
+    session_start();
+    include "_includes/connect.inc.php";
+    include "_includes/functions.inc.php";
+    mysqli_set_charset($conn, "utf8");
 
-mysqli_set_charset($connect, "utf8");
+    if(isset($_GET['pg'])){
+        $activePage = $_GET['pg'];
 
-if(isset($_GET['str'])){
-    $strona = $_GET['str'];
+        switch ($activePage){
+            case 'home':
+                include "home.php";
+                break;
 
-    switch($strona){
-        case "aktualizuj":
-            include "aktualizuj.php";
-            break;
-             
-        case "dodaj":
-            include "dodaj.php";
-            break;
+            case 'login':
+                include "login.php";
+                break;
 
-        case "kraje":
-            include "kraje.php";
-            break;
-        
-        case "login":
-            include "login.php";
-            break;
+            case 'collection':
+                include "collection.php";
+                break;
 
-        case "szukaj":
-            include "szukaj.php";
-            break;
-        
-        case "nieznane":
-            include "nieznane.php";
-            break;
+            case 'countries':
+                include "countries.php";
+                break;
 
-        case "wyswietl":
-            include "wyswietl.php";
-            break;
+            case 'add':
+                include "add.php";
+                break;
 
-        default:
-            include "home.php";
+            case 'update':
+                include "update.php";
+                break;
+
+            case 'unknown':
+                include "unknown.php";
+                break;
+
+            case 'search':
+                include "search.php";
+                break;
+
+            default:
+                include "home.php";
+        }
+    }else{
+        include "home.php";
     }
-
-}else{
-    include "home.php";
-}
