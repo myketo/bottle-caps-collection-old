@@ -96,11 +96,13 @@ nav{
             .kraje,
             .nieznane,
             .wszystkie,
-            .dodaj{
+            .dodaj,
+            .user{
                 @extend %reset_link;
                 padding-bottom: 2px;
                 border-bottom: 1px solid transparent;
                 margin: 0 2vw;
+                text-align: center;
 
                 h3{
                     font-size: 16px;
@@ -118,13 +120,6 @@ nav{
             .active_page{
                 color: $darker-red;
                 // border-color: $darker-red;
-            }
-
-            .user{
-                color: $main-red;
-                //font-size: 10px;
-                font-size: 10px;
-                text-align: center;
             }
         }
     }
@@ -384,12 +379,6 @@ main{
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-
-                .user{
-                    color: $main-red;
-                    font-size: 10px;
-                    text-align: center;
-                }
 
                 .first{
                     margin-bottom: 26px;

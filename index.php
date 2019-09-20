@@ -40,6 +40,10 @@
                 include "search.php";
                 break;
 
+            case 'admin':
+                include "admin.php";
+                break;
+
             default:
                 include "home.php";
         }

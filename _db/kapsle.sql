@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Czas generowania: 02 Maj 2019, 15:59
--- Wersja serwera: 10.3.14-MariaDB
--- Wersja PHP: 7.3.2
+-- Host: 127.0.0.1
+-- Czas generowania: 09 Wrz 2019, 22:40
+-- Wersja serwera: 10.1.35-MariaDB
+-- Wersja PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `id8853703_kapsle`
+-- Baza danych: `kapsle`
 --
 
 -- --------------------------------------------------------
@@ -30,13 +30,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kolekcja` (
   `id` int(11) NOT NULL,
-  `kraj` varchar(30) COLLATE utf8mb4_polish_ci DEFAULT NULL,
-  `marka` varchar(50) COLLATE utf8mb4_polish_ci DEFAULT NULL,
-  `napis` varchar(100) COLLATE utf8mb4_polish_ci DEFAULT NULL,
-  `kolor` varchar(30) COLLATE utf8mb4_polish_ci DEFAULT NULL,
-  `zdjecie` varchar(20) COLLATE utf8mb4_polish_ci DEFAULT NULL,
+  `kraj` varchar(30) COLLATE utf8_polish_ci DEFAULT NULL,
+  `marka` varchar(50) COLLATE utf8_polish_ci DEFAULT NULL,
+  `napis` varchar(100) COLLATE utf8_polish_ci DEFAULT NULL,
+  `kolor` varchar(30) COLLATE utf8_polish_ci DEFAULT NULL,
+  `zdjecie` varchar(20) COLLATE utf8_polish_ci DEFAULT NULL,
   `uzupelnic` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `kolekcja`
@@ -325,7 +325,7 @@ INSERT INTO `kolekcja` (`id`, `kraj`, `marka`, `napis`, `kolor`, `zdjecie`, `uzu
 (333, 'Rosja', 'Piwo firmowe', 'ФИРМЕННОЕ ПИВО', 'czar-złot', '333.jpg', 0),
 (334, 'Niemcy', 'Neumarkter Lammsbräu', '1628', 'złot-czer-biał', '334.jpg', 0),
 (335, 'Czechy', 'Bernard', 'BERNARD ORIGINAL 1597', 'złot-biał-czer', '335.jpg', 0),
-(336, 'Niemcy', 'Patronus', 'P', 'złot-biał-fiol', '336.jpg', 0),
+(336, '', '', 'P', 'złot-biał-fiol', '336.jpg', 1),
 (337, 'Rosja', 'Ста́рый Ме́льник', '', 'złot-brąz', '337.jpg', 0),
 (338, '', '', '', 'biał-złot-ziel', '338.jpg', 1),
 (339, 'Japonia', 'Sapporo', 'SAPPORO SAPPORO SAPPORO SAPPORO', 'nieb-złot-poma', '339.jpg', 0),
@@ -435,7 +435,7 @@ INSERT INTO `kolekcja` (`id`, `kraj`, `marka`, `napis`, `kolor`, `zdjecie`, `uzu
 (444, 'Polska', 'Tyskie', 'TYSKIE STADION 5 WYGRAJ DOSTAWĘ PIWA NA MECZ', 'biał-nieb-żółt', '444.jpg', 0),
 (445, 'Rosja', 'Silnoje', 'СИЛЬНОЕ', 'czer-czar-biał', '445.jpg', 0),
 (446, 'Bułgaria', 'Ariana', 'Ариана', 'złot-biał-czar', '446.jpg', 0),
-(447, 'Polska', 'Specjal', 'SPECJAL MILIONY PIW DO WYGRANIA!', ' czar-złot-biał', '447.jpg', 0),
+(447, 'Polska', 'Specjal', 'SPECJAL MILIONY PIW DO WYGRANIA!', 'czar-złot-biał', '447.jpg', 0),
 (448, 'Polska', 'Okocim', 'OKOCIM WALCZ O BILETY NA UEFA EURO 2016!', 'ziel-czer-czar-biał', '448.jpg', 0),
 (449, 'Polska', 'Okocim', 'OKOCIM', 'ziel-biał-czar', '449.jpg', 0),
 (450, 'Polska', 'Kormoran', 'piwa warzone z pasją www.browarkormoran.pl', 'złot-czar', '450.jpg', 0),
@@ -514,25 +514,7 @@ INSERT INTO `kolekcja` (`id`, `kraj`, `marka`, `napis`, `kolor`, `zdjecie`, `uzu
 (526, 'Polska', 'Łomża', 'ŁOMŻA', 'biał-ziel', '526.jpg', 0),
 (527, 'Włochy', 'Birra Moretti', 'BIRRA MORETTI RICETTA ORIGINALE', 'złot-czer', '527.jpg', 0),
 (528, 'Stany Zjednoczone', 'Coca-Cola', 'Coca-Cola', 'czer-biał', '528.jpg', 0),
-(529, 'Polska', 'Zwierzyniec', 'ZWIERZYNIEC ANNO DOMINI 1806', 'krem-czer-złot', '529.jpg', 0),
-(531, 'Polska', 'Koźlak', 'KOŹLAK BROWAR AMBER Specjalność Pomorza', 'krem-brąz', '530.jpg', 0),
-(532, 'Polska', 'Tatra', 'TATRA CO SEKUNDĘ 4PAK CO MINUTĘ', 'czer-biał-żółt-czar', '532.jpg', 0),
-(533, 'Polska', 'Harnaś', 'HARNAŚ JASNE PEŁNE', 'biał-czer', '533.jpg', 0),
-(534, 'Polska', 'Kasztelan', 'WYGRAJ Z Kasztelan', 'czer-biał-złot', '534.jpg', 0),
-(535, 'Polska', 'Warka', 'WARKA Radler 2%', 'biał-czer', '535.jpg', 0),
-(536, 'Polska', 'Desperados', 'TEQUILA FLAVOURED', 'żółt-czer', '536.jpg', 0),
-(537, 'Polska', 'Johannes', 'Johannes BROWAR AMBER Specjalność Pomorza', 'krem-nieb', '537.jpg', 0),
-(538, 'Polska', 'Sławosz', 'BROWAR WITNICA S.A. 1848', 'biał-czar', '538.jpg', 0),
-(539, 'Polska', 'Jagiełło', 'Jagiełło REGIONALNY BROWAR RODZINNY', 'biał-czer', '539.jpg', 0),
-(540, 'Stany Zjednoczone', 'Coca-Cola', 'Coca-Cola', 'czar-biał', '540.jpg', 0),
-(541, 'Serbia', 'Jelen', 'Jelen PIVO', 'żółt-czar', '541.jpg', 0),
-(542, 'Polska', 'Žatecký Světlý Ležák', 'Žatecký', 'złot-ziel', '542.jpg', 0),
-(543, 'Czechy', 'Holba', 'HOLBA', 'złot-ziel-czer', '543.jpg', 0),
-(544, 'Polska', 'Somersby', 'SOMERSBY', 'złot-krem-ziel', '544.jpg', 0),
-(545, 'Słowenia', 'Union', 'UNION', 'czer-czar', '545.jpg', 0),
-(546, 'Niemcy', 'Beck\'s', '', 'sreb-czer-biał', '546.jpg', 0),
-(547, 'Polska', 'Królewskie', 'Królewskie', 'czer-biał-złot-czar', '547.jpg', 0),
-(548, 'Polska', 'Lech', 'LECH TWIST TO OPEN RECEPTURA STWORZONA W LECH BROWARY WIELKOPOLSKI', 'ziel-biał', '548.jpg', 0);
+(529, 'Polska', 'Zwierzyniec', 'ZWIERZYNIEC ANNO DOMINI 1806', 'krem-czer-złot', '529.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -542,16 +524,17 @@ INSERT INTO `kolekcja` (`id`, `kraj`, `marka`, `napis`, `kolor`, `zdjecie`, `uzu
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `user_login` tinytext COLLATE utf8mb4_polish_ci NOT NULL,
-  `user_pass` longtext COLLATE utf8mb4_polish_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+  `user_login` tinytext COLLATE utf8_polish_ci NOT NULL,
+  `user_pass` longtext COLLATE utf8_polish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 
 --
 -- Zrzut danych tabeli `users`
 --
 
 INSERT INTO `users` (`user_id`, `user_login`, `user_pass`) VALUES
-(1, 'myketo', '$2y$10$hggmwlFqdmlsPBT8g9wRKeTdf9LZocpjsV2gFzl7ZY9C/jCspNA3q');
+(1, 'myketo', '$2y$10$hggmwlFqdmlsPBT8g9wRKeTdf9LZocpjsV2gFzl7ZY9C/jCspNA3q'),
+(2, 'admin', '$2y$10$Ly6RoFXVkGpc/V6cfPafte6VcgUSDEaJ0TwR7jhye2tPK8o54x/Ty');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -577,13 +560,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `kolekcja`
 --
 ALTER TABLE `kolekcja`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=549;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=530;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

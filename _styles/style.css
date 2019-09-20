@@ -8,7 +8,8 @@
 nav .nav_ri .kraje,
 nav .nav_ri .nieznane,
 nav .nav_ri .wszystkie,
-nav .nav_ri .dodaj, nav .nav_le .login,
+nav .nav_ri .dodaj,
+nav .nav_ri .user, nav .nav_le .login,
 nav .nav_le .kraje,
 nav .nav_le .nieznane,
 nav .nav_le .wszystkie,
@@ -120,16 +121,19 @@ nav .nav_ri .login,
 nav .nav_ri .kraje,
 nav .nav_ri .nieznane,
 nav .nav_ri .wszystkie,
-nav .nav_ri .dodaj {
+nav .nav_ri .dodaj,
+nav .nav_ri .user {
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
   margin: 0 2vw;
+  text-align: center;
 }
 nav .nav_ri .login h3,
 nav .nav_ri .kraje h3,
 nav .nav_ri .nieznane h3,
 nav .nav_ri .wszystkie h3,
-nav .nav_ri .dodaj h3 {
+nav .nav_ri .dodaj h3,
+nav .nav_ri .user h3 {
   font-size: 16px;
   margin: 0;
   font-weight: 300;
@@ -138,18 +142,14 @@ nav .nav_ri .login:hover,
 nav .nav_ri .kraje:hover,
 nav .nav_ri .nieznane:hover,
 nav .nav_ri .wszystkie:hover,
-nav .nav_ri .dodaj:hover {
+nav .nav_ri .dodaj:hover,
+nav .nav_ri .user:hover {
   transition: opacity 0.7s ease, border-color 0.7s ease, color 0.2s ease;
   border-color: #c41f1f;
   color: #e03131;
 }
 nav .nav_ri .active_page {
   color: #c41f1f;
-}
-nav .nav_ri .user {
-  color: #e03131;
-  font-size: 10px;
-  text-align: center;
 }
 
 main {
@@ -366,11 +366,6 @@ main .searchDiv .search_bar ::placeholder {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-  nav .toggle_full .fullscreen .user {
-    color: #e03131;
-    font-size: 10px;
-    text-align: center;
   }
   nav .toggle_full .fullscreen .first {
     margin-bottom: 26px;
@@ -1701,6 +1696,18 @@ main .searchDiv .search_bar ::placeholder {
   .search_page .caps_list .bottle_cap .cap_info .brand {
     font-size: 15px;
   }
+}
+.admin_page {
+  padding: 20px;
+  margin-top: 30px;
+}
+.admin_page h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 30px;
+}
+.admin_page ul .date {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

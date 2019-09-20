@@ -39,10 +39,9 @@
             <div class='fullscreen'>
                 <?php
                     if(isset($_SESSION['logged_in'])) echo 
-                    "<span class='user'>
-                        Zalogowano jako: <br>
-                        <u>myketo</u>
-                    </span>";
+                    "<a href='?pg=admin' class='user'>
+                        ADMIN PANEL
+                    </a>";
                 ?>
                 <a href='?pg=login' class='first'>
                 <?php echo isset($_SESSION['logged_in']) ? "Wyloguj" : "Zaloguj"; ?>
@@ -90,10 +89,11 @@
                     echo "'>
                         <h3>Dodaj</h3>
                     </a>
-                    <span class='user'>
-                        Zalogowano jako: <br>
-                        <u>myketo</u>
-                    </span>";
+                    <a href='?pg=admin' class='user ";
+                    if(isset($activePage) && $activePage == 'admin') echo "active_page";
+                    echo "'>
+                        <h3>Admin Panel</h3>
+                    </a>";
                 }
             ?>
 
